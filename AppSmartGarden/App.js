@@ -137,7 +137,7 @@ class pHScreen extends React.Component {
         pH Tanah Terbaru
         </Text>
         <TouchableHighlight style={{alignItems: 'center'}}>
-    <Text style={styles.teksph}>1000data[value]</Text>
+    <Text style={styles.teksph}>7,0</Text>
         </TouchableHighlight>
         <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 20, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
     <Text>Status Tanah : Aman</Text>
@@ -182,7 +182,7 @@ class RHScreen extends React.Component {
         RH Tanah Terbaru
         </Text>
         <TouchableHighlight style={{alignItems: 'center'}}>
-    <Text style={styles.teksph}>1000data[value]</Text>
+    <Text style={styles.teksph}>80%</Text>
         </TouchableHighlight>
         <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 20, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
     <Text>Status Tanah : Aman</Text>
@@ -218,8 +218,8 @@ class DtanamanScreen extends React.Component {
         source={require('./assets/sawi.png')}
         />
         <Button onPress={() => {Alert.alert(
-            'Tomat',
-            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            'Sawi Pakcoy',
+            'pH Optimal : 6 - 7                                                                 RH Optimal : 80 - 90%',
         );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
         </Card>
@@ -232,8 +232,8 @@ class DtanamanScreen extends React.Component {
         source={require('./assets/lombok.png')}
         />
         <Button onPress={() => {Alert.alert(
-            'Tomat',
-            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            'Cabai',
+            'pH Optimal : 6 - 7                                                                 RH Optimal : 70 - 80%',
         );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
         </Card>
@@ -247,7 +247,7 @@ class DtanamanScreen extends React.Component {
         />
         <Button onPress={() => {Alert.alert(
             'Tomat',
-            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            'pH Optimal : 5 - 6                                                                 RH Optimal : 80 - 90%',
         );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
         </Card>
@@ -261,7 +261,7 @@ class DtanamanScreen extends React.Component {
         />
         <Button onPress={() => {Alert.alert(
             'Jagung',
-            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            'pH Optimal : 5 - 7                                                                 RH Optimal : <40%',
         );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
         </Card>
@@ -275,7 +275,7 @@ class DtanamanScreen extends React.Component {
         />
         <Button onPress={() => {Alert.alert(
             'Terong',
-            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 80%',
         );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
         </Card>
@@ -289,7 +289,7 @@ class DtanamanScreen extends React.Component {
         />
         <Button onPress={() => {Alert.alert(
             'Bayam',
-            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            'pH Optimal : 6 - 7                                                                 RH Optimal : >60%',
         );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
         </Card>
@@ -303,7 +303,7 @@ class DtanamanScreen extends React.Component {
         />
         <Button onPress={() => {Alert.alert(
             'Kangkung',
-            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            'pH Optimal : 6 - 7                                                                 RH Optimal : <60%',
         );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
         </Card>
@@ -317,7 +317,7 @@ class DtanamanScreen extends React.Component {
         />
         <Button onPress={() => {Alert.alert(
             'Kubis',
-            'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            'pH Optimal : 5 - 6                                                                 RH Optimal : 80 - 90%',
         );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
         </Card>
@@ -450,7 +450,7 @@ const styles = StyleSheet.create({
     },
 
     teksph: {
-
+        fontSize: 18,
         fontWeight: 'bold',
         alignItems: 'center',
         textAlign: 'center',
