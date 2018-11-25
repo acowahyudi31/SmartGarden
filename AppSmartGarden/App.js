@@ -108,14 +108,14 @@ class pHScreen extends React.Component {
     static navigationOptions = {
         title:'pH tanah',
         headerStyle: {
-            backgroundColor: '#297793',
+            backgroundColor: '#90dd5b',
         },
     };
     render() {
         const data = [ 5.5, 4.6, 6.3, 6.5, 6.0]
         return (
             <View style={{ height: 550, padding: 10, width: wp('100%'), height: hp('80%') }}>
-    <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('98%') }} source={require('./assets/splash4.gif')}/>
+    <Image style={{ position: 'absolute', flex: 1, resizeMode: 'stretch', width: wp('100%'), height: hp('88%') }} source={require('./assets/newbg1.png')}/>
         <LineChart
         style={{ flex: 1}}
         data={ data }
@@ -151,7 +151,7 @@ class RHScreen extends React.Component {
     static navigationOptions = {
         title:'RH tanah',
         headerStyle: {
-            backgroundColor: '#297793',
+            backgroundColor: '#90dd5b',
         },
     };
 
@@ -159,7 +159,7 @@ class RHScreen extends React.Component {
         const data = [ 50, 46, 70, 65, 60]
         return (
             <View style={{ height: 550, padding: 10, width: wp('100%'), height: hp('80%') }}>
-    <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('98%') }} source={require('./assets/splash4.gif')}/>
+    <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('88%') }} source={require('./assets/newbg1.png')}/>
 
         <LineChart
         style={{ flex: 1 }}
@@ -199,7 +199,7 @@ class DtanamanScreen extends React.Component {
     static navigationOptions = {
         title:'Data Tanaman',
         headerStyle: {
-            backgroundColor: '#297793',
+            backgroundColor: '#90dd5b',
         },
     };
 
@@ -208,8 +208,8 @@ class DtanamanScreen extends React.Component {
 
         const data = [ 5.5, 4.6, 6.3, 6.5, 6.0];
         return (
-            <ScrollView style={{ flex: 1}} >
-    <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('1500%') }} source={require('./assets/splash.png')}/>
+            <ScrollView style={{ flex: 1, backgroundColor: '#2aa1c5' }} >
+    <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('1500%')}} />
         <Card title="Sawi Pakcoy">
             <Image
         style={styles.image}
@@ -332,7 +332,7 @@ class marketScreen extends React.Component {
     static navigationOptions = {
         title:'Market Place',
         headerStyle: {
-            backgroundColor: '#297793',
+            backgroundColor: '#90dd5b',
         },
     };
     render() {
@@ -378,7 +378,7 @@ class PengaturanScreen extends React.Component {
         </View>
     );
     }
->>>>>>> 7720fc92cbd6d7e41c8a6322640b41908ecd599d
+
 }
 
 const RootStack = createStackNavigator(
@@ -455,9 +455,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'center',
         backgroundColor: '#84d9f3',
-        borderRadius: 10,
+        borderRadius: 120,
         paddingVertical: 50,
-        width: wp('50%'),
+        width: wp('36%'),
         height: hp('20%'),
 
     },

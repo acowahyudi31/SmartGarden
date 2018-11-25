@@ -9,11 +9,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "expo": "^31.0.2",
-=======
     "expo": "^31.0.5",
->>>>>>> 7720fc92cbd6d7e41c8a6322640b41908ecd599d
     "expo-cli": "^2.4.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
@@ -23,10 +19,6 @@
     "react-native-elements": "^0.19.1",
     "react-native-infoslider": "^1.0.1",
     "react-native-responsive-screen": "^1.1.10",
-<<<<<<< HEAD
-=======
-    "react-native-slideshow": "^1.0.1",
->>>>>>> 7720fc92cbd6d7e41c8a6322640b41908ecd599d
     "react-native-svg-charts": "^5.2.0",
     "react-native-swiper": "^1.5.13",
     "react-navigation": "^3.0.0"
