@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, TouchableOpacity, ActivityIndicator,FlatList } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator,createAppContainer } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
@@ -105,6 +105,31 @@ render() {
 
 
 class pHScreen extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state ={ isLoading: true}
+    }
+
+    componentDidMount(){
+        return fetch('http://hackthon3.politanisamarinda.ac.id/api/hasilph')
+            .then((response) => response.json())
+            .then((responseJson) => {
+                dataph=responseJson.data[0]
+
+                this.setState({
+                    isLoading: false,
+                    dataSource: responseJson.data,
+                }, function(){
+
+                });
+
+            })
+            .catch((error) =>{
+                console.error(error);
+            });
+    }
+
     static navigationOptions = {
         title:'pH tanah',
         headerStyle: {
@@ -112,36 +137,50 @@ class pHScreen extends React.Component {
         },
     };
     render() {
-        const data = [ 5.5, 4.6, 6.3, 6.5, 6.0]
+
+        if(this.state.isLoading){
+            return(
+                <View style={{flex: 1, padding: 20}}>
+                    <ActivityIndicator/>
+                </View>
+            )
+        }
+
+        const data = [7.3,4.54,4.9,4.67,4.69]
         return (
             <View style={{ height: 550, padding: 10, width: wp('100%'), height: hp('80%') }}>
-    <Image style={{ position: 'absolute', flex: 1, resizeMode: 'stretch', width: wp('100%'), height: hp('88%') }} source={require('./assets/newbg1.png')}/>
-        <LineChart
-        style={{ flex: 1}}
-        data={ data }
-        gridMin={ 1 }
-        contentInset={{ top: 10, bottom: 10 }}
-        svg={{ stroke: 'white'}}
-    >
-    <Grid/>
-        </LineChart>
-        <XAxis
-        style={{ marginHorizontal: 25}}
-        data={ data }
-        formatLabel={ value => data[value]+"%" }
-        contentInset={{ left: 10, right: 10 }}
-        svg={{ fontSize: 10, fill: 'white'}}
-        />
+             <Image style={{ position: 'absolute', flex: 1, resizeMode: 'stretch', width: wp('100%'), height: hp('88%') }} source={require('./assets/newbg1.png')}/>
+                <LineChart
+                style={{ flex: 1}}
+                data={ data }
+                gridMin={ 1 }
+                contentInset={{ top: 10, bottom: 10 }}
+                svg={{ stroke: 'white'}}
+                >
+                <Grid/>
+            </LineChart>
+                <XAxis
+            style={{ marginHorizontal: 25}}
+            data={ data }
+            formatLabel={ value => data[value] }
+            contentInset={{ left: 10, right: 10 }}
+            svg={{ fontSize: 10, fill: 'white'}}
+            />
+                <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 30, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
+            pH Tanah Terbaru
+            </Text>
+                <FlatList style={{backgroundColor: '#599e21', borderRadius:5, borderRadius:5,paddingLeft:10,paddingTop:20}}
+                    data={this.state.dataSource}
+                    renderItem={({item}) => <Text>pH: {item.value}----->Waktu: {item.created_at}</Text>}
+                    keyExtractor={({id}, index) => id}
+                />
 
-        <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 30, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
-        pH Tanah Terbaru
-        </Text>
-        <TouchableHighlight style={{alignItems: 'center'}}>
-    <Text style={styles.teksph}>1000data[value]</Text>
-        </TouchableHighlight>
-        <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 20, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
-    <Text>Status Tanah : Aman</Text>
-        </Text>
+            <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 20, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
+            <Text>Status Tanah : Aman</Text>
+            </Text>
+
+
+
         </View>
     );
     }
@@ -182,7 +221,7 @@ class RHScreen extends React.Component {
         RH Tanah Terbaru
         </Text>
         <TouchableHighlight style={{alignItems: 'center'}}>
-    <Text style={styles.teksph}>1000data[value]</Text>
+    <Text style={styles.teksph}>0.57</Text>
         </TouchableHighlight>
         <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 20, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
     <Text>Status Tanah : Aman</Text>
